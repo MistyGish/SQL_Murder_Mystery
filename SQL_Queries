@@ -1,0 +1,35 @@
+/*SELECT
+* FROM crime scene report
+WHERE type = "murder"
+	AND city = "SQL City'
+	AND date = "20180115";*/
+	
+/*SELECT * FROM person
+WHERE address_street_name = "Franklin Ave"
+	AND name LIKE "Annabel%";*/
+
+/*SELECT * FROM person
+WHERE address street name = "Northwestern Dr"
+ORDER BY address number;*/
+
+/*SELECT interview.transcript, person.name FROM interview
+LEFT JOIN person ON interview.person_id = person.id
+WHERE person_id = 14887 OR person_id = 16371;*/
+
+
+/*SELECT person.name, drivers_license.plate_number, get_fit_now_member.membership_status 
+	FROM person
+LEFT JOIN drivers_license ON drivers_license.id = person.license_id
+LEFT JOIN get_fit_now_member ON get_fit_now_member.name = person.name
+WHERE drivers_license.plate_number LIKE "%H42W%";*/
+
+/*SELECT * FROM person WHERE name = "Jeremy Bowers";*/
+
+/*SELECT * FROM interview WHERE person_id = "67318";*/
+
+SELECT person.name, drivers_license.car_make, drivers_license.car_model, 
+	facebook_event_checkin.event_name, facebook_event_checkin.date FROM person
+LEFT JOIN drivers_license ON drivers_license.id = person.license_id
+LEFT JOIN facebook_event_checkin ON facebook_event_checkin.person_id = person.id
+WHERE drivers_license.car_make = "Tesla" 
+	AND facebook_event_checkin.event_name = "SQL Symphony Concert";
